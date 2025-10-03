@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Archetypum — Home</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; }
+
+    /* Dark palette */
+    :root{
+      --bg:#000000;        /* pure black */
+      --surface:#0a0a0a;   /* slightly lighter black */
+      --muted:#8a8f94;     /* muted gray text */
+      --text:#f5f5f5;      /* white text */
+      --accent:#0ea5b7;    /* teal accent */
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .topbar {
+      background: var(--surface);
+      color: var(--text);
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #111;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .brand h1 { font-size:18px; letter-spacing:0.3px; color:var(--text); }
+    .brand p { font-size:12px; color:var(--muted); margin-top:2px; }
+
+    nav a {
+      color: var(--muted);
+      text-decoration:none; margin-left:18px; font-size:15px;
+    }
+    nav a:hover { color: var(--text); text-decoration:underline; }
+
+    .top-actions { display:flex; gap:12px; align-items:center; }
+
+    .logo {
+      width:44px;
+      height:44px;
+      border-radius:6px;
+      object-fit:contain;
+      background:transparent;
+      border: 1px dashed rgba(255,255,255,0.1); /* placeholder frame */
+      padding:6px;
+    }
+
+    .github-link { color:var(--text); text-decoration:none; display:inline-flex; align-items:center; margin-left:8px; }
+    .github-link svg { width:22px; height:22px; fill:var(--text); opacity:0.95; }
+
+    .container { max-width:900px; margin:40px auto; padding:0 20px; }
+
+    .hero {
+      background: var(--surface);
+      border-radius:10px; padding:28px;
+      display:flex; gap:20px; align-items:flex-start;
+      border: 1px solid #111;
+    }
+    .hero-left { flex:1; }
+    .kicker { font-size:13px; color:var(--accent); font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.9px; }
+    .hero h2 { font-size:28px; margin-bottom:10px; color:var(--text); }
+    .hero p { font-size:15px; color:var(--muted); line-height:1.45; }
+
+    .stats {
+      min-width:200px; background:#050505; border-radius:8px; padding:14px;
+      font-size:14px; border: 1px solid #111;
+    }
+    .stats div { margin-bottom:10px; color:var(--muted); }
+    .stat-num { font-weight:700; font-size:18px; color:var(--text); }
+
+    /* Updates section */
+    .updates {
+      margin-top:40px;
+      text-align:center;
+      padding:40px;
+      background: var(--surface);
+      border: 1px solid #111;
+      border-radius: 10px;
+    }
+    .updates h3 {
+      font-size:22px;
+      color:var(--accent);
+      margin-bottom:16px;
+    }
+    .updates p {
+      font-size:20px;
+      font-weight:600;
+      color:var(--muted);
+    }
+
+    footer { margin-top:50px; color:var(--muted); font-size:13px; padding:22px 0; text-align:center; }
+
+    @media (max-width:720px) {
+      .hero { flex-direction:column; }
+      .stats { width:100%; }
+      nav{ display:none; }
+      .topbar { padding:12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <div class="brand">
+      <h1>Archetypum</h1>
+      <p>Tomorrow comes today.</p>
+    </div>
+
+    <div class="top-actions">
+      <nav role="navigation" aria-label="Primary">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Resources</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <!-- Logo placeholder -->
+      <img class="logo" src="archetypum.jpg" alt="Archetypum logo" aria-hidden="true" />
+
+      <!-- GitHub -->
+      <a class="github-link" href="https://github.com/archetypum" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+<section class="hero" aria-labelledby="mission-title">
+  <div class="hero-left">
+    <div class="kicker">About Us</div>
+    <h2 id="mission-title">
+      Archetypum is a <strong>non-profit organization</strong> focused on creating and distributing <strong>free and open-source software</strong> with an emphasis on <strong>security, stability, and user privacy</strong>.
+    </h2>
+    <p>
+      Founded in <em>$DATE</em>, we have been passionately supporting the ideals of <strong>digital freedom</strong> and <strong>autonomy</strong>.
+    </p>
+    <p>
+      Our mission is to provide reliable software and resources that empower individuals and communities while maintaining the highest standards of trust and transparency.
+    </p>
+  </div>
+
+  <aside class="stats" aria-label="Key figures">
+    <div><div class="stat-num">24/7</div><div>Operations</div></div>
+    <div><div class="stat-num">11</div><div>Releases</div></div>
+    <div><div class="stat-num">0</div><div>Visitors last month</div></div>
+  </aside>
+</section>
+
+
+    <section class="updates" aria-labelledby="updates-title">
+      <h3 id="updates-title">Updates</h3>
+      <p>Currently... Archetypum don’t have any updates for you!</p>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Archetypum — All rights reserved.</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
